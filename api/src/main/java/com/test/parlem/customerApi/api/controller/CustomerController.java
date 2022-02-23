@@ -1,7 +1,7 @@
 package com.test.parlem.customerApi.api.controller;
 
 import com.test.parlem.customerApi.domain.models.dto.CustomerDTO;
-import com.test.parlem.customerApi.domain.service.CustomerService;
+import com.test.parlem.customerApi.domain.service.ICustomerService;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @CrossOrigin(origins = "http://localhost:4200")
 public class CustomerController {
 
-    private CustomerService customerService;
+    private ICustomerService customerService;
 
-    public CustomerController(CustomerService customerService){
+    public CustomerController(ICustomerService customerService){
         this.customerService = customerService;
     }
 
@@ -25,6 +25,4 @@ public class CustomerController {
     public @ResponseBody CustomerDTO getCustomer(@PathVariable String customerId){
         return  customerService.getCustomer(customerId);
     }
-
-    
 }

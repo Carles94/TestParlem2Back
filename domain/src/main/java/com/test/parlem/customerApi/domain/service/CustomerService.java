@@ -15,7 +15,7 @@ import com.test.parlem.customerApi.persistence.repository.ProductRepository;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CustomerService {
+public class CustomerService implements ICustomerService {
 
     private CustomerRepository customerRepository;
     private ProductRepository productRepository;
